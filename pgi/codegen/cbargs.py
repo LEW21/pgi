@@ -68,6 +68,8 @@ class BaseInterfaceArgument(CallbackArgument):
             return FlagsArgument
         elif iface_type == GIInfoType.ENUM:
             return EnumArgument
+        elif iface_type == GIInfoType.INTERFACE:
+            return InterfaceArgument
 
         raise NotImplementedError("Unsupported interface type %r" % iface.type)
 
@@ -90,6 +92,10 @@ class ObjectArgument(BaseInterfaceArgument):
 
 
 class StructArgument(BaseInterfaceArgument):
+    pass
+
+
+class InterfaceArgument(BaseInterfaceArgument):
     pass
 
 
